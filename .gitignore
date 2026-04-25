@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.sqlite
+*.sqlite3
+*.db
+.Python
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# Flask runtime data and local secrets
+instance/
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

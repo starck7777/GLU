@@ -1,0 +1,15 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#FFF7ED"/>
+  <circle cx="154" cy="136" r="90" fill="#FDBA74" fill-opacity="0.26"/>
+  <circle cx="674" cy="472" r="124" fill="#86EFAC" fill-opacity="0.24"/>
+  <ellipse cx="400" cy="330" rx="240" ry="150" fill="#D1D5DB"/>
+  <ellipse cx="400" cy="312" rx="222" ry="132" fill="#FFFFFF"/>
+  <circle cx="318" cy="300" r="84" fill="#EAB308"/>
+  <circle cx="318" cy="300" r="72" fill="#FBBF24"/>
+  <circle cx="508" cy="314" r="86" fill="#92400E"/>
+  <circle cx="508" cy="314" r="72" fill="#F59E0B"/>
+  <circle cx="476" cy="292" r="8" fill="#166534"/>
+  <circle cx="530" cy="334" r="8" fill="#166534"/>
+  <circle cx="510" cy="280" r="7" fill="#FDE68A"/>
+  <text x="400" y="525" text-anchor="middle" fill="#9A3412" font-family="Arial, sans-serif" font-size="42" font-weight="700">2 multigrain rotis + dal</text>
+</svg>

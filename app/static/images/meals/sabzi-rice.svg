@@ -1,0 +1,16 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F8FAFC"/>
+  <circle cx="128" cy="474" r="118" fill="#C7F9CC" fill-opacity="0.28"/>
+  <circle cx="688" cy="126" r="92" fill="#BFDBFE" fill-opacity="0.32"/>
+  <ellipse cx="400" cy="334" rx="244" ry="150" fill="#CBD5E1"/>
+  <ellipse cx="400" cy="314" rx="226" ry="130" fill="#FFFFFF"/>
+  <ellipse cx="322" cy="304" rx="82" ry="58" fill="#F8FAFC"/>
+  <circle cx="282" cy="292" r="8" fill="#E5E7EB"/>
+  <circle cx="318" cy="322" r="9" fill="#E5E7EB"/>
+  <circle cx="350" cy="288" r="8" fill="#E5E7EB"/>
+  <circle cx="504" cy="306" r="34" fill="#16A34A"/>
+  <circle cx="470" cy="324" r="26" fill="#F97316"/>
+  <circle cx="536" cy="330" r="26" fill="#65A30D"/>
+  <circle cx="510" cy="270" r="20" fill="#EF4444"/>
+  <text x="400" y="525" text-anchor="middle" fill="#334155" font-family="Arial, sans-serif" font-size="42" font-weight="700">Brown rice + vegetable sabzi</text>
+</svg>
