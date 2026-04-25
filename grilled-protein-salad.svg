@@ -1,0 +1,15 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ECFDF5"/>
+  <circle cx="136" cy="134" r="86" fill="#A7F3D0" fill-opacity="0.36"/>
+  <circle cx="664" cy="466" r="126" fill="#FDE68A" fill-opacity="0.24"/>
+  <ellipse cx="400" cy="332" rx="244" ry="148" fill="#CBD5E1"/>
+  <ellipse cx="400" cy="314" rx="226" ry="128" fill="#FFFFFF"/>
+  <path d="M280 356C280 300 330 254 392 254C454 254 504 300 504 356C504 384 482 406 454 406H330C302 406 280 384 280 356Z" fill="#DCFCE7"/>
+  <path d="M410 272C440 246 492 252 520 290C542 320 544 366 522 394H446C428 368 410 344 392 324C384 314 390 288 410 272Z" fill="#92400E"/>
+  <path d="M418 286C438 272 474 276 492 304C508 330 506 358 488 380" stroke="#FCD34D" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="340" cy="324" r="22" fill="#16A34A"/>
+  <circle cx="384" cy="302" r="18" fill="#84CC16"/>
+  <circle cx="356" cy="366" r="18" fill="#EF4444"/>
+  <circle cx="422" cy="360" r="16" fill="#F97316"/>
+  <text x="400" y="525" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="38" font-weight="700">Grilled chicken/fish + salad</text>
+</svg>

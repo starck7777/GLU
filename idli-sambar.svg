@@ -1,0 +1,19 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#FFF7ED"/>
+  <circle cx="664" cy="112" r="92" fill="#FCD34D" fill-opacity="0.32"/>
+  <circle cx="136" cy="492" r="120" fill="#86EFAC" fill-opacity="0.26"/>
+  <ellipse cx="400" cy="340" rx="250" ry="160" fill="#D1D5DB"/>
+  <ellipse cx="400" cy="320" rx="232" ry="144" fill="#FAFAF9"/>
+  <circle cx="305" cy="290" r="70" fill="#F8FAFC"/>
+  <circle cx="305" cy="290" r="60" fill="#E5E7EB"/>
+  <circle cx="305" cy="290" r="52" fill="#F9FAFB"/>
+  <circle cx="390" cy="260" r="70" fill="#F8FAFC"/>
+  <circle cx="390" cy="260" r="60" fill="#E5E7EB"/>
+  <circle cx="390" cy="260" r="52" fill="#F9FAFB"/>
+  <circle cx="475" cy="300" r="74" fill="#B45309"/>
+  <circle cx="475" cy="300" r="60" fill="#D97706"/>
+  <circle cx="445" cy="290" r="8" fill="#65A30D"/>
+  <circle cx="500" cy="320" r="9" fill="#65A30D"/>
+  <circle cx="478" cy="270" r="7" fill="#FDE68A"/>
+  <text x="400" y="525" text-anchor="middle" fill="#92400E" font-family="Arial, sans-serif" font-size="44" font-weight="700">2 idli + sambar</text>
+</svg>

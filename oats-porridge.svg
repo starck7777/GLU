@@ -1,0 +1,16 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F8FAFC"/>
+  <circle cx="148" cy="120" r="92" fill="#BFDBFE" fill-opacity="0.35"/>
+  <circle cx="680" cy="480" r="126" fill="#FDE68A" fill-opacity="0.26"/>
+  <ellipse cx="400" cy="328" rx="238" ry="150" fill="#CBD5E1"/>
+  <ellipse cx="400" cy="310" rx="220" ry="132" fill="#FFFFFF"/>
+  <ellipse cx="400" cy="308" rx="170" ry="94" fill="#E7C78C"/>
+  <ellipse cx="400" cy="318" rx="150" ry="78" fill="#EBD5AA"/>
+  <circle cx="330" cy="280" r="12" fill="#92400E"/>
+  <circle cx="445" cy="345" r="11" fill="#92400E"/>
+  <circle cx="386" cy="248" r="12" fill="#92400E"/>
+  <circle cx="500" cy="286" r="16" fill="#60A5FA"/>
+  <circle cx="286" cy="334" r="16" fill="#60A5FA"/>
+  <path d="M540 205C560 160 595 150 620 165" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+  <text x="400" y="525" text-anchor="middle" fill="#334155" font-family="Arial, sans-serif" font-size="44" font-weight="700">Oats porridge</text>
+</svg>

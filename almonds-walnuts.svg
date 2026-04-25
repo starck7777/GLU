@@ -1,0 +1,14 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#FFFBEB"/>
+  <circle cx="148" cy="468" r="106" fill="#FDE68A" fill-opacity="0.4"/>
+  <circle cx="666" cy="118" r="86" fill="#FDBA74" fill-opacity="0.3"/>
+  <ellipse cx="400" cy="338" rx="238" ry="146" fill="#D1D5DB"/>
+  <ellipse cx="400" cy="318" rx="220" ry="126" fill="#FFFFFF"/>
+  <ellipse cx="288" cy="310" rx="34" ry="56" fill="#92400E"/>
+  <ellipse cx="356" cy="278" rx="34" ry="56" fill="#A16207"/>
+  <ellipse cx="426" cy="326" rx="34" ry="56" fill="#92400E"/>
+  <ellipse cx="492" cy="286" rx="34" ry="56" fill="#A16207"/>
+  <path d="M314 306C314 280 332 258 356 252C380 258 398 280 398 306C398 332 380 354 356 360C332 354 314 332 314 306Z" fill="#7C2D12"/>
+  <path d="M468 342C468 316 486 294 510 288C534 294 552 316 552 342C552 368 534 390 510 396C486 390 468 368 468 342Z" fill="#7C2D12"/>
+  <text x="400" y="525" text-anchor="middle" fill="#78350F" font-family="Arial, sans-serif" font-size="38" font-weight="700">Almonds or walnuts</text>
+</svg>
