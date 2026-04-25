@@ -1,0 +1,11 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F9FAFB"/>
+  <circle cx="682" cy="114" r="90" fill="#FDE68A" fill-opacity="0.34"/>
+  <circle cx="140" cy="476" r="122" fill="#BBF7D0" fill-opacity="0.28"/>
+  <ellipse cx="400" cy="336" rx="238" ry="150" fill="#D1D5DB"/>
+  <ellipse cx="400" cy="316" rx="220" ry="130" fill="#FFFFFF"/>
+  <ellipse cx="400" cy="312" rx="96" ry="118" fill="#F8FAFC"/>
+  <circle cx="400" cy="334" r="44" fill="#FACC15"/>
+  <circle cx="400" cy="334" r="28" fill="#F59E0B"/>
+  <text x="400" y="525" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="44" font-weight="700">1 boiled egg</text>
+</svg>

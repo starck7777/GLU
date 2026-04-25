@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Settings | GluCare{% endblock %}
+{% block content %}
+<section class="card">
+    <h2>Settings</h2>
+    <p>Define your daily calorie target and critical glucose limits.</p>
+    <form method="post" class="form-grid two">
+        <label>Daily Target Calories
+            <input type="number" name="target_calories" min="1" value="{{ g.user.target_calories }}" required>
+        </label>
+        <label>Low Glucose Threshold
+            <input type="number" name="glucose_low_threshold" min="1" value="{{ g.user.glucose_low_threshold }}" required>
+        </label>
+        <label>High Glucose Threshold
+            <input type="number" name="glucose_high_threshold" min="2" value="{{ g.user.glucose_high_threshold }}" required>
+        </label>
+        <button type="submit">Save Settings</button>
+    </form>
+</section>
+{% endblock %}

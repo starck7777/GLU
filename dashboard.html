@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | GluCare{% endblock %}
+{% block content %}
+<section class="grid stats stats-wide">
+    <article class="card stat-card">
+        <h3>Calories Eaten Today</h3>
+        <p class="metric">{{ total_calories }}</p>
+        <p>Target: {{ target_calories }} kcal</p>
+    </article>
+    <article class="card stat-card">
+        <h3>Calories Burned</h3>
+        <p class="metric">{{ calories_burned }}</p>
+        <p>Burn logged from activity</p>
+    </article>
+    <article class="card stat-card">
+        <h3>Net Calories</h3>
+        <p class="metric {% if excess_calories > 0 %}danger{% endif %}">{{ net_calories }}</p>
+        <p>{% if excess_calories > 0 %}Above target by {{ excess_calories }} kcal{% else %}Within target{% endif %}</p>
+    </article>
+    <article class="card stat-card">
+        <h3>Tracking Streak</h3>
+        <p class="metric">{{ streak_days }} days</p>
+        <p>Reward: {{ reward_level }}</p>
+    </article>
+    <article class="card stat-card">
+        <h3>Streak Points</h3>
+        <p class="metric">{{ streak_points }}</p>
+        <p>Miss a day and points are reduced</p>
+    </article>
+</section>
+
+<section class="grid two-col">
+    <article class="card">
+        <h3>Log Glucose</h3>
+        <form method="post" action="{{ url_for('log_glucose') }}" class="form-grid">
+            <label>Glucose (mg/dL)
+                <input type="number" step="0.1" min="1" name="reading_mgdl" required>
+            </label>
+            <div class="form-grid two">
+                <label>Date
+                    <input type="date" name="glucose_date">
+                </label>
+                <label>Time
+                    <input type="time" name="glucose_time">
+                </label>
+            </div>
+            <label>Notes
+                <input type="text" name="notes" placeholder="Fasting / after meal / symptoms">
+            </label>
+            <button type="submit">Save Glucose</button>
+        </form>
+    </article>
+
+    <article class="card">
+        <h3>Manual Food Entry</h3>
+        <form method="post" action="{{ url_for('log_food') }}" class="form-grid">
+            <input type="hidden" id="presetMealId" name="preset_meal_id" value="{{ selected_preset.id if selected_preset else '' }}">
+            <div class="preset-header">
+                <label class="plain-label">Preset Meal Options</label>
+                <div class="action-row">
+                    <a class="button-link" href="{{ url_for('meals') }}">Select Meal</a>
+                    <a class="ghost-link" href="{{ url_for('dashboard') }}">Clear</a>
+                </div>
+            </div>
+            {% if selected_preset %}
+            <div class="selected-meal-banner">
+                <img src="{{ url_for('static', filename=selected_preset.image) }}" alt="{{ selected_preset.name }}">
+                <div>
+                    <strong>{{ selected_preset.name }}</strong>
+                    <p>{{ selected_preset.category }} | {{ selected_preset.calories }} kcal selected</p>
+                </div>
+            </div>
+            {% else %}
+            <p class="meta">Choose "Select Meal" to open a separate page and pick a preset meal.</p>
+            {% endif %}
+            <label>Food Details
+                <input
+                    type="text"
+                    id="mealNameInput"
+                    name="meal_name"
+                    placeholder="Enter manually or select a meal preset"
+                    value="{{ selected_preset.name if selected_preset else '' }}"
+                    {% if selected_preset %}readonly{% endif %}
+                    required
+                >
+            </label>
+            <label>Calories (kcal)
+                <input
+                    type="number"
+                    step="0.1"
+                    min="1"
+                    id="mealCaloriesInput"
+                    name="calories"
+                    placeholder="Auto-filled from selected meal or enter manually"
+                    value="{{ selected_preset.calories if selected_preset else '' }}"
+                    {% if selected_preset %}readonly{% endif %}
+                    required
+                >
+            </label>
+            <label>Date & Time
+                <input type="datetime-local" name="logged_at">
+            </label>
+            <button type="submit">Save Food Entry</button>
+        </form>
+    </article>
+</section>
+
+<section class="grid two-col">
+    <article class="card">
+        <h3>Log Calorie Burn</h3>
+        <form method="post" action="{{ url_for('log_activity') }}" class="form-grid">
+            <label>Activity Name
+                <input type="text" name="activity_name" placeholder="Walking / Cycling / Gym" required>
+            </label>
+            <div class="form-grid two">
+                <label>Minutes
+                    <input type="number" step="1" min="0" name="minutes" placeholder="30">
+                </label>
+                <label>Calories Burned
+                    <input type="number" step="0.1" min="1" name="calories_burned" placeholder="180" required>
+                </label>
+            </div>
+            <label>Date & Time
+                <input type="datetime-local" name="logged_at">
+            </label>
+            <button type="submit">Save Burn Entry</button>
+        </form>
+    </article>
+
+    <article class="card">
+        <h3>Today Calorie Burn Log</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Activity</th><th>Burned</th><th>Time</th></tr>
+                </thead>
+                <tbody>
+                    {% for row in activity_rows_today %}
+                    <tr>
+                        <td>{{ row.activity_name }}{% if row.minutes %} ({{ row.minutes }} min){% endif %}</td>
+                        <td>{{ row.calories_burned }}</td>
+                        <td>{{ row.logged_at }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="3">No calorie burn logged today.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+
+<section class="grid two-col">
+    <article class="card">
+        <h3>Glucose Trend</h3>
+        <canvas id="glucoseChart"></canvas>
+    </article>
+
+    <article class="card">
+        <h3>Today Food Log</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Meal</th><th>Calories</th><th>Time</th></tr>
+                </thead>
+                <tbody>
+                    {% for row in food_rows_today %}
+                    <tr>
+                        <td>{{ row.meal_name }}</td>
+                        <td>{{ row.calories }}</td>
+                        <td>{{ row.logged_at }}</td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="3">No meals logged today.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </article>
+</section>
+
+<section class="card">
+    <h3>Caretaker Notification Log</h3>
+    <ul class="timeline">
+        {% for n in recent_notifications %}
+            <li><strong>{{ n.event_type }}</strong> - {{ n.message }} <span>{{ n.created_at }}</span></li>
+        {% else %}
+            <li>No critical alerts sent.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const labels = {{ glucose_labels|tojson }};
+const values = {{ glucose_values|tojson }};
+
+const ctx = document.getElementById('glucoseChart');
+if (ctx) {
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Glucose (mg/dL)',
+        data: values,
+        borderColor: '#0d9488',
+        backgroundColor: 'rgba(13, 148, 136, 0.2)',
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {legend: {display: true}},
+      scales: {
+        y: {beginAtZero: false}
+      }
+    }
+  });
+}
+</script>
+{% endblock %}
